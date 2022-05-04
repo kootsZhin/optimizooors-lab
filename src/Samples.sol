@@ -33,11 +33,17 @@ contract Sample1 is SharedSetup {
 }
 
 contract Sample2 is SharedSetup {
-    function measureGas() external {}
+    function measureGas() external {
+        uint256 i;
+        i = i + 1;
+    }
 }
 
 contract Sample3 is SharedSetup {
-    function measureGas() external {}
+    function measureGas() external {
+        uint256 i;
+        i += 1;
+    }
 }
 
 contract Sample4 is SharedSetup {
@@ -52,10 +58,10 @@ contract Sample5 is SharedSetup {
 
 // Customize console output
 abstract contract Labels {
-    string label0 = "";
-    string label1 = "";
-    string label2 = "";
-    string label3 = "";
+    string label0 = "Increment with `i++`";
+    string label1 = "Use `++i` instead";
+    string label2 = "Use `i = i + 1` instead";
+    string label3 = "Use `i += 1` instead";
     string label4 = "";
     string label5 = "";
 }
